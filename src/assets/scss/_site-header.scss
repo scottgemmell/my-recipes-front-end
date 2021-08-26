@@ -1,0 +1,155 @@
+.site-header {
+  
+	display: flex;
+	flex-direction: column;
+	
+	
+	font-size: calc(10px + 2vmin);
+	color: white;
+	margin: 0 auto;
+	width: 960px;
+  
+	text-align: center;
+	width:100%;
+  
+		@include respond-to('small') {
+		  text-align: left;
+		  width:100%;
+	  }
+  
+	  @include respond-to('medium') {
+		  flex-direction: row;
+		  justify-content: space-between;
+		  
+	  }
+  
+	  @include respond-to('large') {
+		  
+	  }
+  }
+  
+  
+  .site-logo {
+	  margin: 20px 0;
+	  width: 100%;
+	  
+		  line-height: 34px;;
+  
+	  @include respond-to('small') {
+		  width:auto;
+	  }
+
+	  @include respond-to('medium') {
+	  display: flex;
+		  flex-direction: column;
+		  
+		  align-items: center;
+	  }
+
+	  a {
+		  background-color: #282c34;
+		  color: #fff;
+		  text-decoration: none;
+		  letter-spacing: 0.1em;
+		  padding: 2px 8px 4px 8px;
+		  font-size: 20px;
+		  display: inline-block;
+
+		  &:hover {
+			  background-color: #999;
+			//	position: relative;
+			//   &:before {
+			// 	  position: absolute;
+			// 	content: "⌂";
+			// 	font-size: 48px;
+			// 	color: #ccc;
+			// 	top: -21px;
+			// 	right: 100%;
+			//   }
+		  }
+
+		  svg {
+			position: relative;
+			top: 2px;
+			height: 19px;
+			width: 19px;
+		  }
+	  }
+  }
+  
+  
+  .site-nav {
+	  /*background-color: yellow;*/
+	  margin: 0 0 20px 0;
+	  padding: 0;
+  display: flex;
+		  flex-direction: column;
+		  justify-content: flex-start;
+		  align-self: center;
+		  line-height: 40px;
+		  width: 100%;
+  
+		  // @include respond-to('small') {
+		  // 	display: grid;
+		  // 	grid-template-columns: 1fr 1fr;
+		  // 	margin: 0;
+		  // 	padding: 0;
+		  // }
+  
+		  @include respond-to('small') {
+	flex-direction: row;
+		  }
+  
+		  @include respond-to('medium') {
+			  display: flex;
+			  flex-direction: row;
+			  justify-content: flex-start;
+			  margin: 20px 0;
+			  padding: 0 0 0 1em;
+			  flex: 1;
+		  }
+  
+  
+	  .site-nav__item {
+		color: #282c34;
+		  list-style-type: none;
+		  margin-right: 10px;
+
+		  @include respond-to('medium') {
+			display: flex;
+			//justify-content: space-between;
+			align-items: center;
+			//position: relative;
+		  }
+  
+		  &.site-nav__item--right {
+			  @include respond-to('large') {
+				  margin-left: auto;
+			  }
+		  }
+  
+		  a {
+			  font-size: 20px;
+			  text-transform: uppercase;
+			  text-decoration: none;
+			  color: #282c34;
+			  
+			//   position: absolute;
+			//   top: 0;
+			//   right: 0;
+			//   left: 0;
+			//   bottom: 0;
+			//   padding: 10px 10px 10px 20px;
+			  
+  
+			  &:hover {
+				  color: #999;
+			  }
+		  }
+  
+		  
+	  }
+  
+	  
+	  
+  }

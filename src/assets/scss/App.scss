@@ -1,0 +1,288 @@
+@import "./_mixins";
+@import "./_site-header";
+
+%u-visually-hidden,
+.u-visually-hidden {
+	display: none;
+}
+
+%u-spinner,
+.u-spinner {
+	// height: 100vh;
+	// width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+	monospace;
+}
+
+.top {
+	background-color: #fafafa;
+}
+
+.layer {
+	.layer__inner {
+		max-width: 960px;
+		margin: 0 auto;
+		//background-color: gold;
+		padding: 0 20px;
+	}
+}
+
+
+
+h1 {
+	border-bottom: 2px solid #f4f4f4;
+	padding-bottom: 20px;
+}
+
+
+/* .app-link {
+  color: #61dafb;
+  text-decoration: none;
+} */
+
+.thumb {
+	position: relative;
+	// height: 210px;
+	// width: 280px;
+	//margin-bottom: 40px;
+	list-style-type: none;
+	display: block;
+	margin: 10px;
+
+	&:hover {
+		.thumb__meta {
+			background-color: white;
+		}
+	}
+
+	// :hover {
+		
+	// 	.thumb__meta:before {
+	// 		content: "";
+	// 		color: green;
+	// 		position: absolute;
+	// 		top: 0;
+	// 		right: 0;
+	// 		bottom: 0;
+	// 		left: 0;
+	// 		background-color: rgba(255,255,255,1);
+	// 	}
+	// }
+
+	.thumb__display {
+		position: relative;
+		img {
+			max-width: 100%;
+			line-height: 1;
+			// position: absolute;
+  			// clip: rect(0px,300px,400px,0px);
+		}
+	}
+
+	.thumb__meta {
+		background-color: rgba(255,255,255,0.6);
+		position: absolute;
+		z-index: 10;
+		bottom: 0;
+		left: 0;
+		padding: 5px 10px 10px 10px;
+
+		
+
+		h3 {
+			margin-top: 0;
+			margin-bottom: 0;
+
+			svg {
+				position: relative;
+				top: 3px;
+			}
+
+			a {
+				color: #000;
+				text-decoration: none;
+				
+				
+			}
+		}
+
+		p {
+			margin: 0 0 10px 0;
+			display: none;
+			// @include respond-to('medium') {
+			// 	display: block;
+			// }
+		}
+	}
+}
+
+// .search-results {
+// 	margin: 0;
+// 	padding: 0;
+// 	display: grid;
+// 	grid-template-columns: 1fr 1fr 1fr;
+// 	grid-gap: 20px;
+
+// 	li {
+// 		list-style-type: none;
+// 		margin: 0;
+// 		padding: 0;
+// 	}
+// }
+
+.subtitle {
+	display: flex;
+	align-items: center;
+
+	svg {
+		margin-right: 4px;
+	}
+}
+
+
+.recipes-list {
+	display: grid;
+	grid-template-columns: 1fr;
+	margin: 0 -10px;
+	padding: 0;
+
+	@include respond-to('small') {
+		grid-template-columns: 1fr 1fr;
+	}
+	
+	@include respond-to('medium') {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	@include respond-to('large') {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+main {
+	text-align: center;
+
+	@include respond-to('small') {
+		text-align: left;
+	}
+}
+
+.ingredients-list {
+	margin: 0 -10px 40px -10px;
+	padding: 0;
+
+	// @include respond-to('small') {
+	// 	grid-template-columns: 1fr;
+	// }
+	
+	// @include respond-to('medium') {
+	// 	grid-template-columns: 1fr 1fr;
+	// }
+	
+	// @include respond-to('large') {
+	// 	grid-template-columns: 1fr 1fr;
+	// }
+}
+
+.ingredient {
+	position: relative;
+	list-style-type: none;
+	display: block;
+	margin: 10px;
+	
+	.ingredient__inner {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+		align-items: center;
+		background-color:#f0f0f0;
+	}
+
+	.ingredient__meta {
+		
+		padding: 40px;
+		flex-grow: 1;
+
+		h3 {
+			margin-top: 0;
+			margin-bottom: 0;
+
+			svg {
+				position: relative;
+				top: 3px;
+			}
+
+			a {
+				color: #000;
+				text-decoration: none;
+			}
+		}
+
+	}
+}
+
+.form {
+	width: 400px;
+}
+
+.field {
+	margin-bottom: 20px;
+
+	.field__title {
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+
+	.field__controls {
+		input,
+		textarea {
+			width: 100%;
+			padding: 10px;
+		}
+
+		textarea {
+			min-height: 150px;
+		}
+	}
+
+	.field__optional {
+		font-weight: normal;
+		color: grey;
+		float: right;
+	}
+}
+
+.controls {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.button {
+	padding: 5px 10px;
+}
+
+.site-theme {
+	float: right;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 10px;
+}
