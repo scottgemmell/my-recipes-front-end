@@ -11,19 +11,16 @@ export const recipesSlice = createSlice({
 
 	},
 	extraReducers: {
-		[getRecipes.pending]: (state, action) => {
+		[getRecipes.pending]: state => {
 			state.status = "loading"
 		},
 		[getRecipes.fulfilled]: (state, action) => {
 			state.list = action.payload
 			state.status = "success"
 		},
-		[getRecipes.rejected]: (state, action) => {
+		[getRecipes.rejected]: state => {
 			state.status = "failed"
 		}
 	}
 });
 
-export const selectRecipes = state => state.recipes;
-
-export const selectRecipe = (state, rec) => state.recipes.list.find(recipe => +recipe.id === 1);

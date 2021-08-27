@@ -4,7 +4,7 @@ import {
 	//useHistory, 
 	useParams 
 } from "react-router-dom";
-import { selectRecipes } from "../../store/slices/recipesSlice";
+import { selectRecipes } from "../../store/selectors/recipesSelectors";
 import { getRecipes } from "../../api/";
 
 export const usePageView = () => {
