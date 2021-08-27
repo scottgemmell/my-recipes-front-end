@@ -1,11 +1,22 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
-import { PageAdd, PageHome, PageLogin, PageProfile, PageView } from "./pages/";
+import { 
+	PageAdd, 
+	// PageEdit, 
+	PageHome, 
+	PageLogin, 
+	PageProfile, 
+	PageView, 
+} from "./pages/";
 import { Main } from "./components";
 import { SiteFooter, SiteHeader } from "./common";
 import "./assets/scss/App.scss";
 
+//export const RecipesContext = React.createContext([]);
+
 function App() {
+
+	
 
 	return (
 		<div className="App">

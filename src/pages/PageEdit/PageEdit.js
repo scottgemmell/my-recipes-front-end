@@ -1,11 +1,19 @@
 import React from "react";
-import { Title } from "../../../common";
+import { Title } from "../../common";
 import { usePageEdit } from "./hooks";
 
-function PageEdit({ match }) {
+function PageEdit() {
 
 	
-	const { handleSubmit, editedTitle, editedSlug, editedImg } = usePageEdit();
+	const { 
+		handleSubmit, 
+		editedTitle, 
+		editedSlug, 
+		editedImg,
+		setEditedTitle,
+		setEditedSlug,
+		setEditedImg,
+	 } = usePageEdit();
 
 	return (
 		<main className="layer">
