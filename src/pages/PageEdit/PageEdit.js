@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom";
-import { Title } from '../common/';
-import { RecipesContext } from '../App';
+import { Title } from '../../../common';
+import { RecipesContext } from '../../../App';
 
 function PageEdit({ match }) {
 

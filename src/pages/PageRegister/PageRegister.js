@@ -1,12 +1,12 @@
 import React from 'react'
-import { Title } from '../common/';
+import { Title } from '../../../common';
 
-function PageProfile() {
+function PageRegister() {
 	return (
 		<main className="layer">
 			<div className="layer__inner">
 		<div>
-		<Title text="Profile" />
+		<Title text="Register" />
 
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis molestiae earum ut?
@@ -18,4 +18,4 @@ function PageProfile() {
 	)
 }
 
-export default PageProfile
+export default PageRegister

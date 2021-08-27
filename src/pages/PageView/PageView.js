@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getRecipes, selectRecipes } from "../features/recipes/recipesSlice";
+import { getRecipes, selectRecipes } from "../../features/recipes/recipesSlice";
 import { Link } from "react-router-dom";
-import { SubTitle, Title } from '../common/';
+import { SubTitle, Title } from '../../common';
 import { MdRestaurant } from "react-icons/md";
 //import { RecipesContext } from '../App';
-import IngredientsList from '../common/IngredientsList';
+import IngredientsList from '../../common/IngredientsList';
 
 function PageView({ match }) {
 

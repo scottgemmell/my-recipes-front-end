@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { MdSearch } from "react-icons/md";
-import { MealsListItem, SubTitle, Title } from '../common';
-import { getRecipes, selectRecipes } from "../features/recipes/recipesSlice";
+import { MealsListItem, SubTitle, Title } from '../../common';
+import { getRecipes, selectRecipes } from "../../features/recipes/recipesSlice";
 
 function PageHome() {
 
