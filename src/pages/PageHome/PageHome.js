@@ -5,11 +5,11 @@ import { usePageHome } from "./hooks";
 
 function PageHome() {
 
-	const { list } = usePageHome();
+	const { data:list } = usePageHome();
 		
 	return (
 		<div className="layer">
-			<div className="layer__inner">
+			{list && <div className="layer__inner">
 				<Title text="List" />
 
 				<SubTitle text="Search results" icon={MdSearch} />
@@ -18,7 +18,7 @@ function PageHome() {
 					{list && list.map((recipe, idx) => (<MealsListItem key={idx} {...recipe} />))}
 				</ul>
 
-			</div>
+			</div>}
 		</div>
 	)
 }

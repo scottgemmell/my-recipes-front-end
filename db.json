@@ -60,31 +60,81 @@
 			"id": 3,
 			"title": "Red Lentil Dahl",
 			"slug": "red-lentil-dahl",
-			"img": "https://i.ibb.co/NTs9SYK/red-lentil-dahl.jpg"
+			"img": "https://i.ibb.co/NTs9SYK/red-lentil-dahl.jpg",
+			"ingredients": [
+				{ 
+					"title": "Salt",
+					"img": "http://placehold.it/400x300/" 
+				},
+				{ 
+					"title": "Pepper",
+					"img": "http://placehold.it/400x300/" 
+				}
+			]
 		},
 		{ 
 			"id": 4,
 			"title": "Oyakodan",
 			"slug": "oyakodon",
-			"img": "https://i.ibb.co/Rzwhf1b/oyakodon.jpg"
+			"img": "https://i.ibb.co/Rzwhf1b/oyakodon.jpg",
+			"ingredients": [
+				{ 
+					"title": "Salt",
+					"img": "http://placehold.it/400x300/" 
+				},
+				{ 
+					"title": "Pepper",
+					"img": "http://placehold.it/400x300/" 
+				}
+			]
 		}, 
 		{ 
 			"id": 5,
 			"title": "Macaroni",
 			"slug": "macaroni",
-			"img": "http://placehold.it/400x300/" 
+			"img": "http://placehold.it/400x300/",
+			"ingredients": [
+				{ 
+					"title": "Salt",
+					"img": "http://placehold.it/400x300/" 
+				},
+				{ 
+					"title": "Pepper",
+					"img": "http://placehold.it/400x300/" 
+				}
+			]
 		}, 
 		{ 
 			"id": 6,
 			"title": "French Toast",
 			"slug": "french-toast",
-			"img": "http://placehold.it/400x300/" 
+			"img": "http://placehold.it/400x300/",
+			"ingredients": [
+				{ 
+					"title": "Salt",
+					"img": "http://placehold.it/400x300/" 
+				},
+				{ 
+					"title": "Pepper",
+					"img": "http://placehold.it/400x300/" 
+				}
+			] 
 		}, 
 		{ 
 			"id": 7,
 			"title": "Granola Bowl",
 			"slug": "granola-bowl",
-			"img": "http://placehold.it/400x300/" 
+			"img": "http://placehold.it/400x300/",
+			"ingredients": [
+				{ 
+					"title": "Salt",
+					"img": "http://placehold.it/400x300/" 
+				},
+				{ 
+					"title": "Pepper",
+					"img": "http://placehold.it/400x300/" 
+				}
+			]
 		}
 	],
 	"ingredients": [

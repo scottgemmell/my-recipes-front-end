@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getRecipes } from "../../api/";
+import { recipesApi } from "../../api";
 
 export const recipesSlice = createSlice({
 	name: "recipes",
@@ -11,14 +11,14 @@ export const recipesSlice = createSlice({
 
 	},
 	extraReducers: {
-		[getRecipes.pending]: state => {
+		[recipesApi.reducerPath.pending]: state => {
 			state.status = "loading"
 		},
-		[getRecipes.fulfilled]: (state, action) => {
+		[recipesApi.reducerPath.fulfilled]: (state, action) => {
 			state.list = action.payload
 			state.status = "success"
 		},
-		[getRecipes.rejected]: state => {
+		[recipesApi.reducerPath.rejected]: state => {
 			state.status = "failed"
 		}
 	}
