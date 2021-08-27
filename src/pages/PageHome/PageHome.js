@@ -1,20 +1,12 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import { MdSearch } from "react-icons/md";
-import { MealsListItem, SubTitle, Title } from '../../common';
-import { getRecipes, selectRecipes } from "../../features/recipes/recipesSlice";
+import { MealsListItem, SubTitle, Title } from "../../common";
+import { usePageHome } from "./hooks";
 
 function PageHome() {
 
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		dispatch(getRecipes());
-	}, [dispatch]);
-
-	const { list } = useSelector(selectRecipes);
-	//console.log("myRecipes", myRecipes);
-	
+	const { list } = usePageHome();
+		
 	return (
 		<div className="layer">
 			<div className="layer__inner">

@@ -1,25 +1,13 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
-import { getRecipes, selectRecipes } from "../../features/recipes/recipesSlice";
+import React from "react";
 import { Link } from "react-router-dom";
-import { SubTitle, Title } from '../../common';
+import { SubTitle, Title } from "../../common";
 import { MdRestaurant } from "react-icons/md";
-//import { RecipesContext } from '../App';
-import IngredientsList from '../../common/IngredientsList';
+import IngredientsList from "../../common/IngredientsList";
+import { usePageView } from "./hooks";
 
-function PageView({ match }) {
+function PageView() {
 
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		dispatch(getRecipes());
-	}, [dispatch]);
-
-	const { list } = useSelector(selectRecipes);
-
-	const recipe = list.find(recipe => recipe.slug === match.params.recipe);
-
-	//console.log("list", list);
+	const { recipe } = usePageView();
 
 	return (
 		<main className="layer">

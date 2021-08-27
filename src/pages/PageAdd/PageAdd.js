@@ -1,7 +1,7 @@
-import React from 'react'
-import { Title } from '../../common';
+import React from "react";
+import { Title } from "../../common";
 
-function PageAdd() {
+const PageAdd = () => {
 	return (
 		<main className="layer">
 			<div className="layer__inner">

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Title } from '../../common';
+import React from "react"
+import { Title } from "../../common";
 
 function PageLogin() {
 	return (
