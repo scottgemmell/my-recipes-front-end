@@ -2,10 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import { 
 	PageAdd, 
-	// PageEdit, 
+	PageEdit, 
 	PageHome, 
 	PageLogin, 
 	PageProfile, 
+	PageRegister,
 	PageView, 
 } from "./pages/";
 import { Main } from "./components";
@@ -37,11 +38,12 @@ function App() {
 							path={"/add/"} 
 							component={PageAdd}
 						/>
-						{/* <Route 
+						
+						<Route 
 							exact={true}
 							path={"/register/"} 
 							component={PageRegister}
-						/>*/}
+						/>
 						<Route 
 							exact={true}
 							path={"/login/"} 
@@ -51,10 +53,10 @@ function App() {
 							path={`/view/:id/:recipe/`} 
 							component={PageView}
 						/>
-						{/* <Route 
+						<Route 
 							path={`/edit/:id/:recipe/`} 
 							component={PageEdit}
-						/>  */}
+						/> 
 						<Redirect to="/login/" />
 					</Switch>
 				</Main>
