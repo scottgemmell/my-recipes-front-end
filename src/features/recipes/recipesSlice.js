@@ -32,7 +32,7 @@ export const recipesSlice = createSlice({
 	}
 });
 
-export const selectRecipes = state => state.recipes.list;
+export const selectRecipes = state => state.recipes;
 
 export const selectRecipe = (state, rec) => state.recipes.list.find(recipe => +recipe.id === 1);
 

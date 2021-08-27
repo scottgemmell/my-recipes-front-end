@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import logo from './logo.svg';
 // import { Counter } from './features/counter/Counter';
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
-import { PageAdd, PageBrowse, PageLogin, PageProfile, PageView } from "./pages/";
+import { PageAdd, PageHome, PageLogin, PageProfile, PageView } from "./pages/";
 
 import { Main } from "./components";
 import { SiteFooter, SiteHeader } from "./common";
@@ -22,7 +22,7 @@ function App() {
 						<Route 
 							exact={true}
 							path={["/", "/list/"]} 
-							component={PageBrowse} 
+							component={PageHome} 
 						/>
 						<Route 
 							exact={true}

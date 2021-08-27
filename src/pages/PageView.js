@@ -15,11 +15,11 @@ function PageView({ match }) {
 		dispatch(getRecipes());
 	}, [dispatch]);
 
-	const myRecipes = useSelector(selectRecipes);
+	const { list } = useSelector(selectRecipes);
 
-	const recipe = myRecipes.find(recipe => recipe.slug === match.params.recipe);
+	const recipe = list.find(recipe => recipe.slug === match.params.recipe);
 
-	//console.log("myRecipes", myRecipes);
+	//console.log("list", list);
 
 	return (
 		<main className="layer">

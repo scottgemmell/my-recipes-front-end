@@ -4,7 +4,7 @@ import { MdSearch } from "react-icons/md";
 import { MealsListItem, SubTitle, Title } from '../common';
 import { getRecipes, selectRecipes } from "../features/recipes/recipesSlice";
 
-function PageBrowse() {
+function PageHome() {
 
 	const dispatch = useDispatch();
 
@@ -12,7 +12,7 @@ function PageBrowse() {
 		dispatch(getRecipes());
 	}, [dispatch]);
 
-	const myRecipes = useSelector(selectRecipes);
+	const { list } = useSelector(selectRecipes);
 	//console.log("myRecipes", myRecipes);
 	
 	return (
@@ -23,7 +23,7 @@ function PageBrowse() {
 				<SubTitle text="Search results" icon={MdSearch} />
 
 				<ul className="recipes-list">
-					{myRecipes && myRecipes.map((recipe, idx) => (<MealsListItem key={idx} {...recipe} />))}
+					{list && list.map((recipe, idx) => (<MealsListItem key={idx} {...recipe} />))}
 				</ul>
 
 			</div>
@@ -31,4 +31,4 @@ function PageBrowse() {
 	)
 }
 
-export default PageBrowse
+export default PageHome
