@@ -1,9 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { get } from "./helpers";
 
 const getRecipes = createAsyncThunk(
 	"recipes/getRecipes",
 	async () => {
-		return await fetch("http://localhost:3001/recipes").then((res) => res.json());
+		return await get("/recipes").then(res => res.data);
 	}
 );
 

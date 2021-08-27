@@ -12,7 +12,7 @@ export const usePageHome = () => {
 	}, [dispatch]);
 
 	const { list } = useSelector(selectRecipes);
-	//console.log("myRecipes", myRecipes);
+	//console.log("list", list);
 
 	return {
 		list
