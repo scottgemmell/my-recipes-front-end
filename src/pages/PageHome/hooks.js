@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { getRecipes, selectRecipes } from "../../store/recipes/recipesSlice";
+import { getRecipes } from "../../api/";
+import { selectRecipes } from "../../store/slices/recipesSlice";
 
 export const usePageHome = () => {
 

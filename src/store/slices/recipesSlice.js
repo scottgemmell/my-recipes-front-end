@@ -1,13 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-export const getRecipes = createAsyncThunk(
-	"recipes/getRecipes",
-	async () => {
-		return await fetch("http://localhost:3001/recipes").then((res) => res.json());
-	}
-);
-
-//dispatch(getRecipes());
+import { createSlice } from "@reduxjs/toolkit";
+import { getRecipes } from "../../api/";
 
 export const recipesSlice = createSlice({
 	name: "recipes",
@@ -35,5 +27,3 @@ export const recipesSlice = createSlice({
 export const selectRecipes = state => state.recipes;
 
 export const selectRecipe = (state, rec) => state.recipes.list.find(recipe => +recipe.id === 1);
-
-export default recipesSlice.reducer;
