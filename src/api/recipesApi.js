@@ -2,13 +2,27 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const recipesApi = createApi({
 	reducerPath: "recipesApi",
-	baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/" }),
+	baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001" }),
+	tagTypes: ["Recipes"],
 	endpoints: (builder) => ({
 		getRecipes: builder.query({
-			query: () => "recipes",
+			query: () => "/recipes",
+			providesTags: (result) => (
+				result
+					? // successful query
+						[
+						...result.map(({ id }) => ({ type: "Recipes", id })),
+						{ type: "Recipes", id: "LIST" }
+						]
+					: // an error occurred, but we still want to refetch this query when `{ type: 'Recipes', id: 'LIST' }` is invalidated
+						[{ type: "Recipes", id: "LIST" }]
+			)
+					
 		}),
 		getRecipeById: builder.query({
-			query: (id) => `recipes/${id}`,
+			query: id => `/recipes/${id}`,
+			//invalidatesTags: [{ type: "Recipes", id: "LIST" }],
+			providesTags: (result, error, id) => [{ type: "Recipes", id: "LIST" }],
 		}),
 		// postRecipeById: builder.query({
 		// 	query: (id) => `recipes/${id}`,
@@ -16,10 +30,11 @@ export const recipesApi = createApi({
 		updateRecipeById: builder.mutation({
 			// note: an optional `queryFn` may be used in place of `query`
 			query: ({ id, ...patch }) => ({
-			  url: `recipes/${id}`,
+			  url: `/recipes/${id}`,
 			  method: "PATCH",
 			  body: patch,
 			}),
+			invalidatesTags: [{ type: "Recipes", id: "LIST" }],
 			// Pick out data and prevent nested properties in a hook or selector
 			transformResponse: (response) => response,
 			// invalidatesTags: ['Post'],
@@ -43,9 +58,6 @@ export const recipesApi = createApi({
 			//   }
 			// ) {},
 		})
-		// getPokemonByName: builder.query({
-		// 	query: (name) => `pokemon/${name}`,
-		// }),
 	}),
 });
 

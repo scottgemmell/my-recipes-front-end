@@ -13,7 +13,7 @@ export const usePageEdit = () => {
 	let [editedSlug, setEditedSlug] = useState(slug);
 	let [editedImg, setEditedImg] = useState(img);
 
-	//const history = useHistory();
+	const history = useHistory();
 	
 	// useEffect(() => {
 	// 	console.log('editedTitle', { editedTitle });
@@ -27,7 +27,7 @@ export const usePageEdit = () => {
 		e.preventDefault();
 		console.log("SUBMIT");
 
-		updatePost({id: +params.id, title: editedTitle, slug: editedSlug, img: editedImg})
+		updatePost({ id: +params.id, title: editedTitle, slug: editedSlug, img: editedImg })
 
 		// const updatedRecipes = storedRecipes.map(recipe => +recipe.id === params.id 
 		// 	? {...recipe, title: editedTitle, slug: editedSlug, img: editedImg }
@@ -37,6 +37,7 @@ export const usePageEdit = () => {
 		// setStoredRecipes(updatedRecipes);	
 		// 	//console.log('match', match)
 		// 	history.push(`/edit/${params.id}/${params.recipe}/`);
+		history.push(`/view/${params.id}/${params.recipe}/`);
 	}
 
 	return { 
