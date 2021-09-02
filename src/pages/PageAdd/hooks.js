@@ -1,17 +1,19 @@
 import { useState } from "react"
 import { useHistory, useParams } from "react-router-dom";
-import { useGetRecipeByIdQuery, useUpdateRecipeByIdMutation } from "../../api/recipesApi";
+import { useGetRecipesQuery, useGetRecipeByIdQuery, useUpdateRecipeByIdMutation, useAddRecipeMutation } from "../../api/recipesApi";
 
-export const usePageEdit = () => {
+export const usePageAdd = () => {
 
 	const params = useParams();
-	const { data: { title, slug, img }  } = useGetRecipeByIdQuery(+params.id);
+	//const { data: { title, slug, img }  } = useGetRecipeByIdQuery(+params.id);
 
-	const [updatePost] = useUpdateRecipeByIdMutation(+params.id)
+	const { data } = useGetRecipesQuery("");
+	console.log("data.length", data.length+1);
+	const [addRecipe] = useAddRecipeMutation();
 	
-	let [editedTitle, setEditedTitle] = useState(title);
-	let [editedSlug, setEditedSlug] = useState(slug);
-	let [editedImg, setEditedImg] = useState(img);
+	let [editedTitle, setEditedTitle] = useState("");
+	let [editedSlug, setEditedSlug] = useState("");
+	let [editedImg, setEditedImg] = useState("http://placehold.it/400x300/");
 
 	const history = useHistory();
 	
@@ -25,9 +27,12 @@ export const usePageEdit = () => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		console.log("SUBMIT");
+		console.log(
+			"SUBMIT",
+			{ id: data.length+1, title: editedTitle, slug: editedSlug, img: editedImg }
+		);
 
-		updatePost({ id: +params.id, title: editedTitle, slug: editedSlug, img: editedImg })
+		addRecipe({ id: data.length+1, title: editedTitle, slug: editedSlug, img: editedImg })
 
 		// const updatedRecipes = storedRecipes.map(recipe => +recipe.id === params.id 
 		// 	? {...recipe, title: editedTitle, slug: editedSlug, img: editedImg }
@@ -38,7 +43,7 @@ export const usePageEdit = () => {
 		// 	//console.log('match', match)
 		// 	history.push(`/edit/${params.id}/${params.recipe}/`);
 		// history.push(`/view/${params.id}/${params.recipe}/`);
-		history.push(`/`);
+		
 	}
 
 	return { 

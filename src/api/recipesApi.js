@@ -57,8 +57,25 @@ export const recipesApi = createApi({
 			// 	getCacheEntry,
 			//   }
 			// ) {},
-		})
+		}),
+		addRecipe: builder.mutation({
+			query(body) {
+				return {
+					url: `recipes`,
+					method: 'POST',
+					body,
+				}
+			},
+			// Invalidates all Post-type queries providing the `LIST` id - after all, depending of the sort order,
+			// that newly created post could show up in any lists.
+			invalidatesTags: [{ type: 'Recipes', id: 'LIST' }],
+		}),
 	}),
 });
 
-export const { useGetRecipesQuery, useGetRecipeByIdQuery, useUpdateRecipeByIdMutation } = recipesApi;
+export const { 
+	useGetRecipesQuery, 
+	useGetRecipeByIdQuery, 
+	useUpdateRecipeByIdMutation, 
+	useAddRecipeMutation, 
+} = recipesApi;
