@@ -5,11 +5,12 @@ export const usePageHome = () => {
 	const { 
 		data, 
 		// error, 
-		// isLoading 
+		isLoading 
 	} = useGetRecipesQuery("");
 	//console.log("=>", { data, error, isLoading });
 
 	return {
-		data
+		data,
+		isLoading,
 	}
 }

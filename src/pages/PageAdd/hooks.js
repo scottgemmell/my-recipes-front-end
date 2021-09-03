@@ -32,7 +32,12 @@ export const usePageAdd = () => {
 			{ id: data.length+1, title: editedTitle, slug: editedSlug, img: editedImg }
 		);
 
-		addRecipe({ id: data.length+1, title: editedTitle, slug: editedSlug, img: editedImg })
+		addRecipe({ 
+			id: data.length+1, 
+			title: editedTitle, 
+			slug: editedSlug, 
+			img: editedImg 
+		}).then(history.push("/"));
 
 		// const updatedRecipes = storedRecipes.map(recipe => +recipe.id === params.id 
 		// 	? {...recipe, title: editedTitle, slug: editedSlug, img: editedImg }
@@ -42,7 +47,7 @@ export const usePageAdd = () => {
 		// setStoredRecipes(updatedRecipes);	
 		// 	//console.log('match', match)
 		// 	history.push(`/edit/${params.id}/${params.recipe}/`);
-		// history.push(`/view/${params.id}/${params.recipe}/`);
+		
 		
 	}
 

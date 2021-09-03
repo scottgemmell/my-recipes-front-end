@@ -27,7 +27,12 @@ export const usePageEdit = () => {
 		e.preventDefault();
 		console.log("SUBMIT");
 
-		updatePost({ id: +params.id, title: editedTitle, slug: editedSlug, img: editedImg })
+		updatePost({ 
+			id: +params.id, 
+			title: editedTitle, 
+			slug: editedSlug, 
+			img: editedImg 
+		})
 
 		// const updatedRecipes = storedRecipes.map(recipe => +recipe.id === params.id 
 		// 	? {...recipe, title: editedTitle, slug: editedSlug, img: editedImg }
@@ -38,7 +43,7 @@ export const usePageEdit = () => {
 		// 	//console.log('match', match)
 		// 	history.push(`/edit/${params.id}/${params.recipe}/`);
 		// history.push(`/view/${params.id}/${params.recipe}/`);
-		history.push(`/`);
+		
 	}
 
 	return { 

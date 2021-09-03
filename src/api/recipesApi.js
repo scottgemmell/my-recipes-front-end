@@ -16,7 +16,8 @@ export const recipesApi = createApi({
 						]
 					: // an error occurred, but we still want to refetch this query when `{ type: 'Recipes', id: 'LIST' }` is invalidated
 						[{ type: "Recipes", id: "LIST" }]
-			)
+			),
+			transformResponse: (response) => response.reverse(),
 					
 		}),
 		getRecipeById: builder.query({
@@ -62,8 +63,19 @@ export const recipesApi = createApi({
 			query(body) {
 				return {
 					url: `recipes`,
-					method: 'POST',
+					method: "POST",
 					body,
+				}
+			},
+			// Invalidates all Post-type queries providing the `LIST` id - after all, depending of the sort order,
+			// that newly created post could show up in any lists.
+			invalidatesTags: [{ type: 'Recipes', id: 'LIST' }],
+		}),
+		deleteRecipe: builder.mutation({
+			query(id) {
+				return {
+					url: `recipes/${id}`,
+					method: "DELETE",
 				}
 			},
 			// Invalidates all Post-type queries providing the `LIST` id - after all, depending of the sort order,
@@ -78,4 +90,5 @@ export const {
 	useGetRecipeByIdQuery, 
 	useUpdateRecipeByIdMutation, 
 	useAddRecipeMutation, 
+	useDeleteRecipeMutation,
 } = recipesApi;

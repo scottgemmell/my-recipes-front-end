@@ -7,28 +7,41 @@ import { usePageView } from "./hooks";
 
 function PageView() {
 
-	const { recipe } = usePageView();
+	const { recipe, isLoading, handleDelete } = usePageView();
 
 	return (
 		<main className="layer">
 			<div className="layer__inner">
+				{isLoading && "Loading..."}
 				{recipe && <div>
 					<Title text="View" />
 
-					<h2>*{recipe.title}* - <Link
-						className="App-link"
-						to={`/edit/${recipe.id}/${recipe.slug}/`}
-					>
-						Edit
-					</Link></h2>
+					<h2>
+						{recipe.title}
+					</h2>
+					<p>
+						<Link
+							className="App-link"
+							to={`/edit/${recipe.id}/${recipe.slug}/`}
+						>
+							Edit
+						</Link>&nbsp;|&nbsp;
+						<button
+							className="App-link"
+							onClick={() => handleDelete(recipe.id)}
+						>
+							Delete
+						</button>
+					</p>
 
 					<p>
 						Lorem ipsum <b>{recipe.title}</b> dolor sit amet consectetur adipisicing elit. Perferendis sapiente eum officia.
 					</p>
 
-					<SubTitle text="Ingredients" icon={MdRestaurant} />
-
-					<IngredientsList ingredients={recipe.ingredients || []} />
+					{recipe.ingredients && <>
+						<SubTitle text="Ingredients" icon={MdRestaurant} />
+						<IngredientsList ingredients={recipe.ingredients} />
+					</>}
 					
 				</div>}
 			</div>
