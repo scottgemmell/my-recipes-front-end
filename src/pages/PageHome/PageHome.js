@@ -17,7 +17,6 @@ function PageHome() {
 
 				{(!isFetching && !isLoading) && <>
 					<SubTitle text="Search results" icon={MdSearch} />
-
 					 
 					<ul className="recipes-list">
 						{list && list.map((recipe, idx) => (<MealsListItem key={idx} {...recipe} />))}

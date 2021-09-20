@@ -5,32 +5,7 @@
       "title": "Tricolore Salad",
       "slug": "tricolore-salad",
       "img": "https://i.ibb.co/HDBX2xS/tricolore-salad.jpg",
-      "ingredients": [
-        {
-          "title": "Sliced tomatoes",
-          "img": "https://i.ibb.co/9vfXNB9/sliced-tomatoes.jpg"
-        },
-        {
-          "title": "Sliced mozarella",
-          "img": "https://i.ibb.co/DV56dwN/sliced-mozarella.jpg"
-        },
-        {
-          "title": "Basil",
-          "img": "https://i.ibb.co/r37VX4v/basil-leaves.jpg"
-        },
-        {
-          "title": "Olive oil",
-          "img": "https://i.ibb.co/q0zWpBs/olive-oil.jpg"
-        },
-        {
-          "title": "Salt",
-          "img": "http://placehold.it/400x300/"
-        },
-        {
-          "title": "Pepper",
-          "img": "http://placehold.it/400x300/"
-        }
-      ],
+      "ingredients": true,
       "isLoading": false
     },
     {
@@ -38,112 +13,59 @@
       "title": "Easy Italian Bean Salad",
       "slug": "easy-italian-bean-salad",
       "img": "https://i.ibb.co/TW5NQKk/easy-italian-bean-salad.jpg",
-      "ingredients": [
-        {
-          "title": "Basil",
-          "img": "https://i.ibb.co/r37VX4v/basil-leaves.jpg"
-        },
-        {
-          "title": "Olive oil",
-          "img": "https://i.ibb.co/q0zWpBs/olive-oil.jpg"
-        },
-        {
-          "title": "Salt",
-          "img": "http://placehold.it/400x300/"
-        },
-        {
-          "title": "Pepper",
-          "img": "http://placehold.it/400x300/"
-        }
-      ]
+      "ingredients": false
     },
     {
       "id": 3,
       "title": "Red Lentil Dahl",
       "slug": "red-lentil-dahl",
       "img": "https://i.ibb.co/NTs9SYK/red-lentil-dahl.jpg",
-      "ingredients": [
-        {
-          "title": "Salt",
-          "img": "http://placehold.it/400x300/"
-        },
-        {
-          "title": "Pepper",
-          "img": "http://placehold.it/400x300/"
-        }
-      ]
+      "ingredients": false
     },
     {
       "id": 4,
       "title": "Oyakodan",
       "slug": "oyakodon",
       "img": "https://i.ibb.co/Rzwhf1b/oyakodon.jpg",
-      "ingredients": [
-        {
-          "title": "Salt",
-          "img": "http://placehold.it/400x300/"
-        },
-        {
-          "title": "Pepper",
-          "img": "http://placehold.it/400x300/"
-        }
-      ]
+      "ingredients": false
     },
     {
       "id": 5,
       "title": "Macaroni",
       "slug": "macaroni",
       "img": "http://placehold.it/400x300/",
-      "ingredients": [
-        {
-          "title": "Salt",
-          "img": "http://placehold.it/400x300/"
-        },
-        {
-          "title": "Pepper",
-          "img": "http://placehold.it/400x300/"
-        }
-      ]
+      "ingredients": false
     },
     {
       "id": 6,
       "title": "French Toast",
       "slug": "french-toast",
       "img": "http://placehold.it/400x300/",
-      "ingredients": [
-        {
-          "title": "Salt",
-          "img": "http://placehold.it/400x300/"
-        },
-        {
-          "title": "Pepper",
-          "img": "http://placehold.it/400x300/"
-        }
-      ]
+      "ingredients": false
     },
     {
       "id": 7,
       "title": "Granola Bowl",
       "slug": "granola-bowl",
       "img": "http://placehold.it/400x300/",
-      "ingredients": [
-        {
-          "title": "Salt",
-          "img": "http://placehold.it/400x300/"
-        },
-        {
-          "title": "Pepper",
-          "img": "http://placehold.it/400x300/"
-        }
-      ]
+      "ingredients": false
     }
   ],
   "ingredients": [
     {
       "id": 1,
+      "title": "Salt",
+      "img": "http://placehold.it/400x300/"
+    },
+    {
+      "id": 2,
+      "title": "Pepper",
+      "img": "http://placehold.it/400x300/"
+    },
+    {
+      "id": 3,
       "title": "Sliced tomatoes",
-      "img": "https://i.ibb.co/9vfXNB9/sliced-tomatoes.jpg",
-      "recipeId": 1
+      "img": "https://i.ibb.co/9vfXNB9/sliced-tomatoes.jpg"
     }
   ],
   "profile": {

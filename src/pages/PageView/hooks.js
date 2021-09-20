@@ -1,5 +1,9 @@
 import { useHistory, useParams } from "react-router-dom";
-import { useGetRecipeByIdQuery, useDeleteRecipeMutation } from "../../api/recipesApi";
+import { 
+	useGetRecipeByIdQuery, 
+	useDeleteRecipeMutation, 
+	//useGetIngredientsByIdsQuery,
+} from "../../api/recipesApi";
 
 export const usePageView = () => {
 
@@ -8,14 +12,21 @@ export const usePageView = () => {
 
 	const { data:recipe, isLoading, isFetching } = useGetRecipeByIdQuery(+params.id);
 	const [deleteRecipe, { isDeleting }] = useDeleteRecipeMutation();
+	// console.log("recipe", recipe)
+
+	// const ing = useGetIngredientsByIdsQuery(recipe.ingredients || "");
+	// console.log("ing", ing)
 
 	const handleDelete = (idx) => {
 		deleteRecipe(idx)
 			.then(history.push("/"));
 	};
 
+	console.log("*", recipe)
+
 	return {
 		recipe,
+		//ingredients,
 		handleDelete,
 		isFetching,
 		isLoading,

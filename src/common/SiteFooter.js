@@ -1,9 +1,10 @@
 import React from 'react'
+import { Box } from "@chakra-ui/react"
 
 function SiteFooter() {
 
 	return (
-		<div className="bottom layer">
+		<Box my={8} className="bottom layer">
 			<div className="layer__inner">
 
 				<footer className="site-footer">
@@ -13,7 +14,7 @@ function SiteFooter() {
 				</footer>
 				
 			</div>
-		</div>
+		</Box>
 	)
 }
 

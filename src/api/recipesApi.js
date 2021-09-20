@@ -82,6 +82,16 @@ export const recipesApi = createApi({
 			// that newly created post could show up in any lists.
 			invalidatesTags: [{ type: 'Recipes', id: 'LIST' }],
 		}),
+		// getIngredientsByIds: builder.query({
+		// 	query(ids) {
+		// 		let all = [];
+		// 		ids.map(
+		// 			id => all.push(`/ingredients/${id}`)
+		// 		);
+		// 		return all;
+		// 	},
+		// 	providesTags: (result, error, id) => [{ type: "Ingredients", id: "LIST" }],
+		// }),
 	}),
 });
 
@@ -91,4 +101,5 @@ export const {
 	useUpdateRecipeByIdMutation, 
 	useAddRecipeMutation, 
 	useDeleteRecipeMutation,
+	useGetIngredientsByIdsQuery,
 } = recipesApi;

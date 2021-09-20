@@ -54,7 +54,6 @@ h1 {
 	padding-bottom: 20px;
 }
 
-
 /* .app-link {
   color: #61dafb;
   text-decoration: none;
@@ -105,7 +104,7 @@ h1 {
 		z-index: 10;
 		bottom: 0;
 		left: 0;
-		padding: 5px 10px 10px 10px;
+		padding: 5px 10px 5px 10px;
 
 		
 
@@ -115,7 +114,9 @@ h1 {
 
 			svg {
 				position: relative;
-				top: 3px;
+			top: -1px;
+				display: inline-block;
+				vertical-align:text-bottom;
 			}
 
 			a {

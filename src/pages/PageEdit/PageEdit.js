@@ -1,6 +1,7 @@
 import React from "react";
 import { LoadingPanel, Title } from "../../common";
 import { usePageEdit } from "./hooks";
+import { Button, ButtonGroup, FormControl, FormLabel, Radio, RadioGroup, Stack, Input, Text, Textarea } from "@chakra-ui/react";
 
 function PageEdit() {
 
@@ -9,9 +10,11 @@ function PageEdit() {
 		editedTitle, 
 		editedSlug, 
 		editedImg,
+		editedIngredients,
 		setEditedTitle,
 		setEditedSlug,
 		setEditedImg,
+		setEditedIngredients,
 		isLoading, 
 		isFetching,
 	 } = usePageEdit();
@@ -19,75 +22,92 @@ function PageEdit() {
 	return (
 		<main className="layer">
 			<div className="layer__inner">
-				<div>
+				<Stack>
 					<Title text="Edit" />
-					<p>
+					{/* <p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					</p>
+					</p> */}
+
 					{(isLoading || isFetching) && <LoadingPanel />}
 					{(!isLoading && !isFetching) && <form 
 						className="form" 
 						onSubmit={handleSubmit}
 					>
-						<div className="field">
-							<div className="field__title">
-								<label htmlFor="">
-									Title
-								</label>
-							</div>
-							<div className="field__controls">
-								<input 
-									type="text" 
-									defaultValue={editedTitle} 
-									onChange={e => setEditedTitle(e.target.value)} 
+
+						<FormControl id="title" my={6}>
+							<FormLabel>
+								Title
+							</FormLabel>
+							<Input 
+								size="lg" 
+								type="text" 
+								defaultValue={editedTitle} 
+								onChange={e => setEditedTitle(e.target.value)} 
+							/>
+						</FormControl>
+
+						<FormControl id="slug" my={6}>
+							<FormLabel>
+								Slug
+								<Text color="silver" style={{ float: "right" }}>
+									[unique]
+								</Text>
+							</FormLabel>
+							<Input
+								size="lg" 
+								defaultValue={editedSlug} 
+								onChange={e => setEditedSlug(e.target.value)} 
+							/>
+						</FormControl>
+
+						<FormControl id="url" my={6}>
+							<FormLabel>
+								Image URL
+							</FormLabel>
+							<Input 
+								size="lg" 
+								defaultValue={editedImg} 
+								onChange={e => setEditedImg(e.target.value)} 
 								/>
-							</div>
-						</div>
-						<div className="field">
-							<div className="field__title">
-								<label htmlFor="">
-									Slug
-									<span className="field__optional">[unique]</span>
-								</label>
-							</div>
-							<div className="field__controls">
-								<input type="text" 
-									defaultValue={editedSlug} 
-									onChange={e => setEditedSlug(e.target.value)} 
-								/>
-							</div>
-						</div>
-						<div className="field">
-							<div className="field__title">
-								<label htmlFor="">
-									Image URL
-								</label>
-							</div>
-							<div className="field__controls">
-								<input type="text" 
-									defaultValue={editedImg} 
-									onChange={e => setEditedImg(e.target.value)} 
-								 />
-							</div>
-						</div>
-						<div className="field">
-							<div className="field__title">
-								<label htmlFor="">
-									Description
-									<span className="field__optional">[optional]</span>
-								</label>
-							</div>
-							<div className="field__controls">
-								<textarea />
-							</div>
-						</div>
-						<div className="controls">
-							<button className="button">
+						</FormControl>
+
+						<FormControl id="description" my={6}>
+							<FormLabel>
+								Description
+								<Text color="silver" style={{ float: "right" }}>
+									[optional]
+								</Text>
+							</FormLabel>
+							<Textarea size="lg" />
+						</FormControl>
+
+						<FormControl id="ingredients" my={6}>
+							<FormLabel>
+								Show ingredients?
+							</FormLabel>
+							<RadioGroup defaultValue={editedIngredients} 
+								onChange={value => setEditedIngredients(value)} my={6}>
+								<Stack spacing={5} direction="row">
+									<Radio value="true">
+										Yes
+									</Radio>
+									<Radio value="false">
+										No
+									</Radio>
+								</Stack>
+							</RadioGroup>
+						</FormControl>
+
+						<ButtonGroup style={{ float: "right" }}>
+							<Button colorScheme="blue" size="lg" variant="outline">
+								Undo
+							</Button>
+							<Button type="submit" colorScheme="blue" size="lg">
 								Submit
-							</button>
-						</div>
+							</Button>
+						</ButtonGroup>
 					</form>}
-				</div>
+				</Stack>
 			</div>
 		</main>
 	)

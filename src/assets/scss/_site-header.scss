@@ -70,10 +70,13 @@
 
 		  svg {
 			position: relative;
-			top: 2px;
+			top: -1px;
 			height: 19px;
 			width: 19px;
-		  }
+
+				display: inline-block;
+				vertical-align:text-bottom;
+		}
 	  }
   }
   
