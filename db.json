@@ -2,7 +2,7 @@
   "recipes": [
     {
       "id": 1,
-      "title": "Tricolore Salad TTT",
+      "title": "Tricolore Salad",
       "slug": "tricolore-salad",
       "img": "https://i.ibb.co/HDBX2xS/tricolore-salad.jpg",
       "ingredients": [
@@ -136,19 +136,6 @@
           "img": "http://placehold.it/400x300/"
         }
       ]
-    },
-    {
-      "id": 8,
-      "title": "z",
-      "slug": "z",
-      "img": "http://placehold.it/400x300/"
-    },
-    {
-      "id": 9,
-      "title": "z",
-      "slug": "z",
-      "img": "http://placehold.it/400x300/",
-      "isLoading": false
     }
   ],
   "ingredients": [
