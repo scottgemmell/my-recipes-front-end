@@ -6,21 +6,19 @@ export const usePageView = () => {
 	const params = useParams();
 	const history = useHistory();
 
-	const { data:recipe } = useGetRecipeByIdQuery(+params.id);
-	const [deleteRecipe, { isLoading }] = useDeleteRecipeMutation();
+	const { data:recipe, isLoading, isFetching } = useGetRecipeByIdQuery(+params.id);
+	const [deleteRecipe, { isDeleting }] = useDeleteRecipeMutation();
 
 	const handleDelete = (idx) => {
-		console.log("idx",  idx );
-		deleteRecipe(idx).then(history.push("/"))
-		
-
+		deleteRecipe(idx)
+			.then(history.push("/"));
 	};
-
-	
 
 	return {
 		recipe,
 		handleDelete,
+		isFetching,
 		isLoading,
+		isDeleting,
 	}
 }

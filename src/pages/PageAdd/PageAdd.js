@@ -1,5 +1,5 @@
 import React from "react";
-import { Title } from "../../common";
+import { LoadingPanel, Title } from "../../common";
 import { usePageAdd } from "./hooks";
 
 function PageEdit() {
@@ -12,6 +12,8 @@ function PageEdit() {
 		setEditedTitle,
 		setEditedSlug,
 		setEditedImg,
+		isLoading, 
+		isFetching,
 	 } = usePageAdd();
 
 	return (
@@ -22,7 +24,9 @@ function PageEdit() {
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					</p>
-					<form 
+
+					{(isLoading || isFetching) && <LoadingPanel />}
+					{(!isLoading && !isFetching) && <form 
 						className="form" 
 						onSubmit={handleSubmit}
 					>
@@ -83,7 +87,7 @@ function PageEdit() {
 								Submit
 							</button>
 						</div>
-					</form>
+					</form>}
 				</div>
 			</div>
 		</main>

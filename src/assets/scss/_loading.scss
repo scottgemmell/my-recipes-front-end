@@ -1,0 +1,38 @@
+
+.ch-skeleton {
+	background-color:#e5e5e5;
+	-webkit-mask-image:-webkit-radial-gradient(#fff,#000);
+	overflow:hidden;
+	position:relative
+}
+.ch-skeleton:before{
+	-webkit-animation:skeleton-pulse 1.2s ease-in-out infinite;
+	animation:skeleton-pulse 1.2s ease-in-out infinite;
+	background:linear-gradient(-90deg,#e5e5e5,#fafafa 40%,#fafafa 60%,#e5e5e5);
+	bottom:0;
+	content:"";
+	display:block;
+	left:0;
+	position:absolute;
+	top:0;
+	width:100vw
+}
+	
+	@-webkit-keyframes skeleton-pulse{
+		0% {
+			-webkit-transform:translateX(-100vw);
+			transform:translateX(-100vw)
+		} to {
+			-webkit-transform:translateX(100vw);
+			transform:translateX(100vw)
+		}
+	}
+	@keyframes skeleton-pulse{
+		0% {
+			-webkit-transform:translateX(-100vw);
+			transform:translateX(-100vw)
+		} to {
+			-webkit-transform:translateX(100vw);
+			transform:translateX(100vw)
+		}
+	}

@@ -6,3 +6,6 @@ export { default as SubTitle } from "./SubTitle";
 export { default as Title } from "./Title";
 export { default as IngredientsList } from "./IngredientsList";
 export { default as IngredientsListItem } from "./IngredientsListItem";
+export { default as LoadingPanel } from "./LoadingPanel";
+export { default as LoadingThumb } from "./LoadingThumb";
+export { default as Main } from "./Main";

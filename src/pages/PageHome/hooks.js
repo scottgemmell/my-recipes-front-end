@@ -3,14 +3,15 @@ import { useGetRecipesQuery } from "../../api/recipesApi";
 export const usePageHome = () => {
 
 	const { 
-		data, 
+		data:list, 
 		// error, 
-		isLoading 
-	} = useGetRecipesQuery("");
-	//console.log("=>", { data, error, isLoading });
+		isFetching,
+		isLoading, 
+	} = useGetRecipesQuery();
 
 	return {
-		data,
+		list,
+		isFetching,
 		isLoading,
 	}
 }

@@ -1,29 +1,30 @@
 import React from "react";
 import { MdSearch } from "react-icons/md";
-import { MealsListItem, SubTitle, Title } from "../../common";
+import { MealsListItem, SubTitle, Title, LoadingPanel } from "../../common/";
 import { usePageHome } from "./hooks";
 
 function PageHome() {
 
-	const { data:list, isLoading } = usePageHome();
-	console.log("list", list);
+	const { list, isFetching, isLoading } = usePageHome();
 		
 	return (
 		<div className="layer">
-			
-			{list && <div className="layer__inner">
+		
+			<div className="layer__inner">
 				<Title text="List" />
 
-				<SubTitle text="Search results" icon={MdSearch} />
+				{(isFetching || isLoading) && <LoadingPanel />}
 
-				{isLoading 
-					? 
-						"Loading..."
-					: 
-						<ul className="recipes-list">
-							{list && list.map((recipe, idx) => (<MealsListItem key={idx} {...recipe} />))}
-						</ul>}
-			</div>}
+				{(!isFetching && !isLoading) && <>
+					<SubTitle text="Search results" icon={MdSearch} />
+
+					 
+					<ul className="recipes-list">
+						{list && list.map((recipe, idx) => (<MealsListItem key={idx} {...recipe} />))}
+					</ul>
+				</>}
+
+			</div>
 		</div>
 	)
 }

@@ -9,8 +9,7 @@ import {
 	PageRegister,
 	PageView, 
 } from "./pages/";
-import { Main } from "./components";
-import { SiteFooter, SiteHeader } from "./common";
+import { Main, SiteFooter, SiteHeader } from "./common";
 import "./assets/scss/App.scss";
 
 //export const RecipesContext = React.createContext([]);
