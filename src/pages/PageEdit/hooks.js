@@ -6,14 +6,13 @@ export const usePageEdit = () => {
 
 	const params = useParams();
 	const history = useHistory();
-
-	const { data: { title, slug, img, ingredients }  } = useGetRecipeByIdQuery(+params.id);
-
+	const { data: { title, slug, img, ingredients } } = useGetRecipeByIdQuery(+params.id);
 	const [updatePost, { isLoading, isFetching }] = useUpdateRecipeByIdMutation(+params.id)
 	
 	let [editedTitle, setEditedTitle] = useState(title);
 	let [editedSlug, setEditedSlug] = useState(slug);
 	let [editedImg, setEditedImg] = useState(img);
+	
 	let [editedIngredients, setEditedIngredients] = useState(ingredients);
 
 	const handleSubmit = e => {

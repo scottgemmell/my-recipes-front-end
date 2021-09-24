@@ -24,6 +24,7 @@ export const recipesApi = createApi({
 			query: id => `/recipes/${id}`,
 			//invalidatesTags: [{ type: "Recipes", id: "LIST" }],
 			providesTags: (result, error, id) => [{ type: "Recipes", id: "LIST" }],
+			
 		}),
 		// postRecipeById: builder.query({
 		// 	query: (id) => `recipes/${id}`,

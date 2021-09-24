@@ -22,8 +22,6 @@ export const usePageView = () => {
 			.then(history.push("/"));
 	};
 
-	console.log("*", recipe)
-
 	return {
 		recipe,
 		//ingredients,
